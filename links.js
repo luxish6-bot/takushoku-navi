@@ -9,7 +9,8 @@ const AFFILIATE_LINKS = {
   watami:     "https://www.watami-takushoku-direct.jp/", // ← ワタミの宅食ダイレクト
   tsurukame:  "https://tsurukame-kitchen.com/",    // ← Dr.つるかめキッチン
   greenspoon: "https://green-spoon.jp/",           // ← GREEN SPOON
-  muscledeli: "https://muscledeli.jp/"             // ← マッスルデリ
+  muscledeli: "https://muscledeli.jp/",            // ← マッスルデリ
+  medimeal:   "https://px.a8.net/svt/ejp?a8mat=4B88SX+ERO3ZM+4ICQ+60OXE" // メディミール(A8提携済み)
 };
 
 document.addEventListener("DOMContentLoaded", () => {
