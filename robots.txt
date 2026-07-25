@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://luxish6-bot.github.io/takushoku-navi/sitemap.xml
