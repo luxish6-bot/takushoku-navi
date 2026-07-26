@@ -1,176 +1,242 @@
+/* 宅配食ナビ ── 生成りとチャコールの静かな配色 / 明朝の見出し / ゆとりある余白 */
 :root{
-  --main:#2e7d55; --main-d:#1f5b3d; --main-l:#eaf4ee;
-  --accent:#e8590c; --accent-d:#c2410c;
-  --bg:#fbfbf9; --card:#fff; --text:#23282d; --muted:#6b7280;
-  --line:#e5e3dc; --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);
-  --radius:12px; --max:820px;
+  /* 色は3系統のみ。生成り・墨・差し色 */
+  --paper:#faf8f4;        /* 生成り(背景) */
+  --paper-2:#fffefb;      /* カード */
+  --ink:#2b2926;          /* 墨(本文) */
+  --ink-soft:#6f6b64;     /* 薄墨(補足) */
+  --line:#e4e0d6;         /* 罫 */
+  --accent:#8a6a4a;       /* 差し色:枯茶。見出し罫・強調に */
+  --cta:#a4543a;          /* CTA:抑えた弁柄 */
+  --cta-d:#8a4530;
+
+  --serif:"Yu Mincho","YuMincho","Hiragino Mincho ProN","ヒラギノ明朝 ProN W3","HGS明朝E",serif;
+  --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic",Meiryo,sans-serif;
+
+  --max:760px;            /* 本文幅を狭めて可読性を上げる */
+  --radius:2px;           /* 角丸はほぼ無し。直線的で端正に */
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic",Meiryo,sans-serif;
-  color:var(--text);background:var(--bg);line-height:1.9;font-size:16.5px;
-  -webkit-font-smoothing:antialiased;letter-spacing:.01em;
+  font-family:var(--sans);
+  color:var(--ink);background:var(--paper);
+  line-height:2.05;                 /* 行間を広く */
+  font-size:16.5px;letter-spacing:.03em;
+  -webkit-font-smoothing:antialiased;
 }
-img{max-width:100%;height:auto}
+img{max-width:100%;height:auto;display:block}
 
-/* ---------- header ---------- */
+/* ── header ───────────────────────────── */
 header{
-  background:var(--main);color:#fff;padding:0;
-  position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.08);
+  background:var(--paper);border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:100;
 }
-.hdr-inner{max-width:var(--max);margin:0 auto;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.site-title{font-size:1.02rem;font-weight:700;line-height:1.4}
-.site-title a{color:#fff;text-decoration:none}
-.site-title small{display:block;font-size:.7rem;font-weight:400;opacity:.85;letter-spacing:.02em}
+.hdr-inner{
+  max-width:var(--max);margin:0 auto;padding:20px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.site-title{font-family:var(--serif);font-size:1.15rem;font-weight:400;letter-spacing:.16em;line-height:1.5}
+.site-title a{color:var(--ink);text-decoration:none}
+.site-title small{
+  display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;
+  color:var(--ink-soft);margin-top:5px;font-weight:400;
+}
 #navToggle{
-  display:none;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
-  color:#fff;font-size:.82rem;padding:7px 12px;border-radius:8px;cursor:pointer;white-space:nowrap;
+  display:none;background:none;border:1px solid var(--line);color:var(--ink-soft);
+  font-size:.72rem;letter-spacing:.16em;padding:9px 15px;cursor:pointer;
+  border-radius:var(--radius);font-family:var(--sans);
 }
-#navToggle:hover{background:rgba(255,255,255,.24)}
+#navToggle:hover{border-color:var(--ink-soft);color:var(--ink)}
 
-/* ---------- nav ---------- */
-nav{background:var(--main-d);border-top:1px solid rgba(255,255,255,.1)}
-.nav-inner{max-width:var(--max);margin:0 auto;display:flex;flex-wrap:wrap;padding:4px 10px}
+/* ── nav ──────────────────────────────── */
+nav{background:var(--paper);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--max);margin:0 auto;display:flex;flex-wrap:wrap;padding:8px 16px 10px}
 nav a{
-  color:rgba(255,255,255,.92);text-decoration:none;padding:9px 12px;
-  font-size:.85rem;border-radius:6px;white-space:nowrap;transition:background .15s;
+  color:var(--ink-soft);text-decoration:none;padding:7px 12px;
+  font-size:.76rem;letter-spacing:.09em;white-space:nowrap;transition:color .2s;
 }
-nav a:hover{background:rgba(255,255,255,.13);color:#fff}
-nav a.current{background:rgba(255,255,255,.18);color:#fff;font-weight:700}
+nav a:hover{color:var(--ink)}
+nav a.current{color:var(--ink);border-bottom:1px solid var(--accent)}
 
-/* ---------- layout ---------- */
-main{max-width:var(--max);margin:0 auto;padding:26px 16px 56px}
+/* ── layout ───────────────────────────── */
+main{max-width:var(--max);margin:0 auto;padding:52px 24px 100px}
+
 h1{
-  font-size:1.62rem;line-height:1.55;margin:10px 0 6px;font-weight:700;letter-spacing:-.01em;
+  font-family:var(--serif);font-weight:400;
+  font-size:1.78rem;line-height:1.85;letter-spacing:.03em;
+  margin:14px 0 10px;
 }
 h2{
-  font-size:1.24rem;margin:44px 0 16px;padding:0 0 10px 0;font-weight:700;
-  border-bottom:3px solid var(--main);position:relative;line-height:1.55;
+  font-family:var(--serif);font-weight:400;
+  font-size:1.34rem;line-height:1.8;letter-spacing:.05em;
+  margin:80px 0 26px;padding-bottom:14px;
+  border-bottom:1px solid var(--line);position:relative;
 }
-h3{font-size:1.06rem;margin:28px 0 10px;font-weight:700;line-height:1.6}
-p{margin:14px 0}
-a{color:var(--main-d)}
-strong{font-weight:700}
+h2::after{content:"";position:absolute;left:0;bottom:-1px;width:44px;height:1px;background:var(--accent)}
+h3{
+  font-family:var(--serif);font-weight:400;
+  font-size:1.14rem;line-height:1.8;letter-spacing:.04em;margin:44px 0 14px;
+}
+p{margin:20px 0}
+a{color:var(--accent)}
+strong{font-weight:600}
 
-.date{color:var(--muted);font-size:.82rem;margin-bottom:18px}
-.breadcrumb{font-size:.78rem;color:var(--muted);margin-bottom:10px}
-.breadcrumb a{color:var(--main)}
+.date{color:var(--ink-soft);font-size:.72rem;letter-spacing:.12em;margin-bottom:34px}
+.breadcrumb{font-size:.72rem;color:var(--ink-soft);letter-spacing:.08em;margin-bottom:14px}
+.breadcrumb a{color:var(--ink-soft);text-decoration:none}
+.breadcrumb a:hover{color:var(--ink)}
 .disclosure{
-  background:#f3f1eb;border-radius:8px;padding:9px 13px;
-  font-size:.75rem;color:var(--muted);margin-bottom:18px;
+  font-size:.68rem;color:var(--ink-soft);letter-spacing:.06em;
+  margin-bottom:30px;padding-bottom:14px;border-bottom:1px solid var(--line);
 }
 
-/* ---------- hero (top page) ---------- */
+/* ── hero image ───────────────────────── */
+.hero-img{
+  margin:0 0 42px;position:relative;
+  aspect-ratio:16/9;overflow:hidden;background:#eceae4;
+}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-img figcaption{
+  font-size:.66rem;color:var(--ink-soft);letter-spacing:.08em;
+  margin-top:8px;text-align:right;
+}
+/* トップページ用:全幅の扉 */
 .hero{
-  background:linear-gradient(135deg,var(--main) 0%,#245f43 100%);
-  color:#fff;border-radius:var(--radius);padding:28px 24px;margin:6px 0 26px;
+  margin:0 0 56px;padding:0;position:relative;
+  aspect-ratio:16/8;overflow:hidden;background:#eceae4;
 }
-.hero h1{color:#fff;margin:0 0 12px;font-size:1.55rem;border:none;padding:0}
-.hero p{color:rgba(255,255,255,.94);margin:10px 0 0;font-size:.95rem}
-.hero .hero-stats{display:flex;gap:22px;margin-top:20px;flex-wrap:wrap}
-.hero-stats div{font-size:.8rem;opacity:.9}
-.hero-stats b{display:block;font-size:1.35rem;font-weight:700;opacity:1}
+.hero img{width:100%;height:100%;object-fit:cover}
+.hero-caption{
+  position:absolute;left:0;bottom:0;right:0;padding:44px 32px 30px;
+  background:linear-gradient(to top,rgba(28,26,24,.78) 0%,rgba(28,26,24,.35) 55%,transparent 100%);
+  color:#fff;
+}
+.hero-caption h1{
+  font-family:var(--serif);color:#fff;font-size:1.62rem;margin:0;
+  line-height:1.75;letter-spacing:.04em;font-weight:400;
+  text-shadow:0 1px 12px rgba(0,0,0,.3);
+}
+.hero-caption p{
+  color:rgba(255,255,255,.88);font-size:.82rem;margin:12px 0 0;
+  letter-spacing:.06em;line-height:1.9;
+}
 
-/* ---------- lead / callouts ---------- */
+/* ── lead / callouts ──────────────────── */
 .lead{
-  background:var(--card);border:1px solid var(--line);border-left:5px solid var(--main);
-  border-radius:var(--radius);padding:18px 20px;margin:20px 0;box-shadow:var(--shadow);
+  background:var(--paper-2);border:1px solid var(--line);
+  border-left:2px solid var(--accent);
+  padding:26px 28px;margin:34px 0;
 }
 .lead p:first-child{margin-top:0}
 .lead p:last-child{margin-bottom:0}
+
 .merit,.demerit{
-  background:var(--card);border-radius:10px;padding:13px 16px;margin:12px 0;
-  font-size:.94rem;box-shadow:var(--shadow);position:relative;padding-left:44px;
+  background:var(--paper-2);border:1px solid var(--line);
+  padding:18px 22px 18px 46px;margin:16px 0;
+  font-size:.92rem;line-height:1.95;position:relative;
 }
-.merit{border-left:4px solid var(--main)}
-.demerit{border-left:4px solid #c0533f}
 .merit::before,.demerit::before{
-  position:absolute;left:14px;top:13px;font-size:1rem;font-weight:700;line-height:1.5;
+  position:absolute;left:20px;top:18px;font-family:var(--serif);font-size:.9rem;
 }
-.merit::before{content:"○";color:var(--main)}
-.demerit::before{content:"△";color:#c0533f}
-.note{font-size:.8rem;color:var(--muted);line-height:1.75}
+.merit::before{content:"○";color:var(--accent)}
+.demerit::before{content:"×";color:var(--ink-soft)}
+.note{font-size:.74rem;color:var(--ink-soft);line-height:1.95;letter-spacing:.04em}
 
-/* ---------- table ---------- */
-.table-wrap{overflow-x:auto;margin:18px 0;border-radius:10px;box-shadow:var(--shadow);-webkit-overflow-scrolling:touch}
-table{width:100%;border-collapse:collapse;background:var(--card);font-size:.89rem;min-width:100%}
-th,td{border-bottom:1px solid var(--line);padding:12px 11px;text-align:left;vertical-align:top;line-height:1.7}
-th{background:var(--main-l);font-weight:700;color:var(--main-d);white-space:nowrap;font-size:.85rem}
-tr:last-child td{border-bottom:none}
-tbody tr:hover td,table tr:hover td{background:#fafaf7}
+/* ── table ────────────────────────────── */
+.table-wrap{overflow-x:auto;margin:30px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;background:var(--paper-2);font-size:.84rem;line-height:1.85}
+th,td{border-bottom:1px solid var(--line);padding:15px 13px;text-align:left;vertical-align:top}
+th{
+  font-family:var(--serif);font-weight:400;font-size:.82rem;letter-spacing:.06em;
+  color:var(--ink);background:none;white-space:nowrap;
+  border-bottom:1px solid var(--ink-soft);
+}
+tr:last-child td{border-bottom:1px solid var(--line)}
 
-/* ---------- rank card ---------- */
+/* ── rank card ────────────────────────── */
 .rank-card{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:22px;margin:22px 0;box-shadow:var(--shadow);transition:box-shadow .2s;
+  background:var(--paper-2);border:1px solid var(--line);
+  padding:32px 30px;margin:34px 0;
 }
-.rank-card:hover{box-shadow:0 2px 6px rgba(0,0,0,.08),0 8px 28px rgba(0,0,0,.07)}
 .rank-card .badge{
-  display:inline-block;background:var(--accent);color:#fff;font-weight:700;
-  border-radius:99px;padding:4px 14px;font-size:.76rem;margin-bottom:10px;letter-spacing:.02em;
+  display:inline-block;font-family:var(--sans);
+  font-size:.64rem;letter-spacing:.2em;color:var(--accent);
+  border:1px solid var(--accent);padding:5px 13px;margin-bottom:16px;
 }
-.rank-card h3{border:none;margin:6px 0 12px;font-size:1.14rem}
+.rank-card h3{margin:4px 0 16px;font-size:1.2rem}
 
-/* ---------- buttons ---------- */
+/* ── buttons ──────────────────────────── */
 .btn{
-  display:block;text-align:center;background:var(--accent);color:#fff!important;
-  text-decoration:none;font-weight:700;padding:16px 18px;border-radius:10px;margin:18px 0 10px;
-  font-size:1rem;box-shadow:0 3px 10px rgba(232,89,12,.28);transition:.18s;position:relative;
+  display:block;text-align:center;background:var(--cta);color:#fff!important;
+  text-decoration:none;font-weight:400;letter-spacing:.1em;
+  padding:19px 20px;margin:28px 0 12px;font-size:.92rem;
+  border-radius:var(--radius);transition:background .25s;
 }
-.btn::after{content:" ›";font-weight:400}
-.btn:hover{background:var(--accent-d);transform:translateY(-1px);box-shadow:0 5px 16px rgba(232,89,12,.34)}
-.btn-sub{background:var(--main);box-shadow:0 3px 10px rgba(46,125,85,.24)}
-.btn-sub:hover{background:var(--main-d);box-shadow:0 5px 16px rgba(46,125,85,.3)}
+.btn::after{content:"　—"}
+.btn:hover{background:var(--cta-d)}
+.btn-sub{background:none;color:var(--ink)!important;border:1px solid var(--ink-soft)}
+.btn-sub:hover{background:var(--ink);color:#fff!important}
 
-/* ---------- toc ---------- */
+/* ── toc ──────────────────────────────── */
 .toc{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:16px 20px;margin:24px 0;box-shadow:var(--shadow);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:26px 4px;margin:44px 0;
 }
-.toc-title{font-weight:700;font-size:.92rem;color:var(--main-d);margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.toc ol{margin:0;padding-left:20px}
-.toc li{margin:5px 0;font-size:.89rem;line-height:1.7}
-.toc a{color:var(--text);text-decoration:none;border-bottom:1px dotted var(--line)}
-.toc a:hover{color:var(--main);border-bottom-color:var(--main)}
+.toc-title{
+  font-family:var(--serif);font-size:.86rem;letter-spacing:.18em;
+  color:var(--ink-soft);margin-bottom:16px;
+}
+.toc ol{margin:0;padding-left:22px;list-style:decimal-leading-zero}
+.toc li{margin:10px 0;font-size:.84rem;line-height:1.9;color:var(--ink-soft)}
+.toc a{color:var(--ink);text-decoration:none}
+.toc a:hover{color:var(--accent)}
 
-/* ---------- faq ---------- */
-.faq-q{font-weight:700;margin-top:20px;font-size:.98rem;padding-left:26px;position:relative}
-.faq-q::before{content:"Q";position:absolute;left:0;top:0;color:var(--main);font-weight:700}
+/* ── faq ──────────────────────────────── */
+.faq-q{
+  font-family:var(--serif);font-weight:400;font-size:1rem;letter-spacing:.04em;
+  margin-top:34px;padding-left:28px;position:relative;line-height:1.85;
+}
+.faq-q::before{content:"Q";position:absolute;left:0;top:0;color:var(--accent);font-family:var(--serif)}
 .faq-a{
-  background:var(--card);border:1px solid var(--line);border-radius:10px;
-  padding:13px 16px;margin-top:6px;font-size:.93rem;box-shadow:var(--shadow);
+  border-left:1px solid var(--line);padding:6px 0 6px 27px;margin-top:10px;
+  font-size:.9rem;color:var(--ink);line-height:1.95;
 }
 
-ul,ol{padding-left:24px;margin:14px 0}
-li{margin:7px 0;line-height:1.85}
+ul,ol{padding-left:24px;margin:20px 0}
+li{margin:10px 0;line-height:1.95}
 
-/* ---------- footer ---------- */
+/* ── footer ───────────────────────────── */
 footer{
-  background:#262b2e;color:#b9c0c4;text-align:center;padding:32px 16px;
-  font-size:.8rem;margin-top:50px;line-height:2;
+  border-top:1px solid var(--line);background:var(--paper);
+  color:var(--ink-soft);text-align:center;padding:52px 24px 60px;
+  font-size:.72rem;letter-spacing:.1em;line-height:2.4;margin-top:90px;
 }
-footer a{color:#dfe4e6;margin:0 10px;text-decoration:none}
-footer a:hover{text-decoration:underline}
+footer a{color:var(--ink-soft);margin:0 14px;text-decoration:none}
+footer a:hover{color:var(--ink)}
 
-/* ---------- mobile ---------- */
+/* ── mobile ───────────────────────────── */
 @media (max-width:768px){
-  body{font-size:16px;line-height:1.85}
-  main{padding:20px 14px 46px}
-  h1{font-size:1.33rem;line-height:1.6}
-  h2{font-size:1.13rem;margin:36px 0 14px}
-  h3{font-size:1.02rem}
-  .hero{padding:22px 18px}
-  .hero h1{font-size:1.3rem}
-  .hero-stats{gap:16px}
+  body{font-size:15.5px;line-height:1.98}
+  main{padding:34px 20px 70px}
+  h1{font-size:1.38rem;line-height:1.8}
+  h2{font-size:1.16rem;margin:58px 0 22px}
+  h3{font-size:1.04rem;margin:34px 0 12px}
+  .hero{aspect-ratio:4/3}
+  .hero-caption{padding:34px 22px 24px}
+  .hero-caption h1{font-size:1.24rem}
+  .hero-caption p{font-size:.76rem}
   #navToggle{display:block}
   nav{display:none}
   nav.open{display:block}
-  .nav-inner{flex-direction:column;padding:6px 8px 10px}
-  nav a{padding:12px 12px;border-bottom:1px solid rgba(255,255,255,.08);border-radius:0;font-size:.92rem}
+  .nav-inner{flex-direction:column;padding:6px 20px 16px}
+  nav a{padding:14px 0;border-bottom:1px solid var(--line);font-size:.88rem;letter-spacing:.08em}
   nav a:last-child{border-bottom:none}
-  .rank-card{padding:18px 16px}
-  table{font-size:.83rem}
-  th,td{padding:10px 8px}
-  .btn{padding:15px 14px;font-size:.95rem}
+  nav a.current{border-bottom:1px solid var(--line)}
+  .rank-card{padding:26px 20px}
+  .lead{padding:22px 20px}
+  .merit,.demerit{padding:16px 18px 16px 42px}
+  table{font-size:.79rem}
+  th,td{padding:12px 9px}
+  .btn{padding:17px 16px;font-size:.88rem}
 }
