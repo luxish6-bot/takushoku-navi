@@ -10,7 +10,9 @@ const AFFILIATE_LINKS = {
   tsurukame:  "https://tsurukame-kitchen.com/",    // ← Dr.つるかめキッチン
   greenspoon: "https://green-spoon.jp/",           // ← GREEN SPOON
   muscledeli: "https://muscledeli.jp/",            // ← マッスルデリ
-  medimeal:   "https://px.a8.net/svt/ejp?a8mat=4B88SX+ERO3ZM+4ICQ+60OXE" // メディミール(A8提携済み)
+  medimeal:   "https://px.a8.net/svt/ejp?a8mat=4B88SX+ERO3ZM+4ICQ+60OXE", // メディミール(A8提携済み)
+  // 楽天アフィリエイト(A8経由・提携済み)
+  rakuten_freezer: "https://rpx.a8.net/svt/ejp?a8mat=4B88SX+EJXH4I+2HOM+BW8O1&rakuten=y&a8ejpredirect=" + encodeURIComponent("https://search.rakuten.co.jp/search/mall/小型冷凍庫/")
 };
 
 document.addEventListener("DOMContentLoaded", () => {
