@@ -4,6 +4,8 @@
 // 全ページのボタンに自動反映されます。
 // ============================================================
 const A8 = m => "https://px.a8.net/svt/ejp?a8mat=" + m;
+// もしも「どこでもリンク」(Amazon) — 任意のAmazon URLへのアフィリエイトリンクを生成
+const AMZ = u => "https://af.moshimo.com/af/c/click?a_id=5716759&p_id=170&pc_id=185&pl_id=4062&url=" + encodeURIComponent(u);
 
 const AFFILIATE_LINKS = {
   // ---- A8.net 提携済み(稼働中) ----
@@ -19,6 +21,10 @@ const AFFILIATE_LINKS = {
 
   // ---- 楽天アフィリエイト(A8経由・提携済み) ----
   rakuten_freezer: "https://rpx.a8.net/svt/ejp?a8mat=4B88SX+EJXH4I+2HOM+BW8O1&rakuten=y&a8ejpredirect=" + encodeURIComponent("https://search.rakuten.co.jp/search/mall/小型冷凍庫/"),
+
+  // ---- Amazon(もしも経由・提携済み / どこでもリンク) ----
+  amazon_freezer: AMZ("https://www.amazon.co.jp/s?k=小型冷凍庫"),
+  amazon_container: AMZ("https://www.amazon.co.jp/s?k=冷凍保存容器"),
 
   // ---- 審査中(承認され次第ここを差し替え) ----
   nosh:       "https://nosh.jp/",                        // A8審査中
