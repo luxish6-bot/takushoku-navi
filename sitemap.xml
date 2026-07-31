@@ -29,4 +29,8 @@
 <url><loc>https://takuhaishoku-navi.com/tsurukame.html</loc><priority>0.8</priority></url>
 <url><loc>https://takuhaishoku-navi.com/fitfood.html</loc><priority>0.8</priority></url>
 <url><loc>https://takuhaishoku-navi.com/hozon.html</loc><priority>0.8</priority></url>
+  <url><loc>https://takuhaishoku-navi.com/shokurakuzen.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://takuhaishoku-navi.com/taihei.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://takuhaishoku-navi.com/rinyushoku.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://takuhaishoku-navi.com/seigenshoku-hikaku.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

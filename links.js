@@ -18,6 +18,7 @@ const AFFILIATE_LINKS = {
 
   // ---- もしもアフィリエイト 提携済み(W報酬対象) ----
   wellness:   "https://af.moshimo.com/af/c/click?a_id=5716754&p_id=4793&pc_id=12663&pl_id=63258", // ウェルネスダイニング
+  tedemogu:   "https://af.moshimo.com/af/c/click?a_id=5716755&p_id=6988&pc_id=19985&pl_id=88548", // TEDEMOGU(手づかみ離乳食)
 
   // ---- 楽天アフィリエイト(A8経由・提携済み) ----
   rakuten_freezer: "https://rpx.a8.net/svt/ejp?a8mat=4B88SX+EJXH4I+2HOM+BW8O1&rakuten=y&a8ejpredirect=" + encodeURIComponent("https://search.rakuten.co.jp/search/mall/小型冷凍庫/"),
