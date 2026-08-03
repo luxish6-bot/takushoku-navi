@@ -15,6 +15,8 @@ const AFFILIATE_LINKS = {
   shokurakuzen: A8("4B8BWU+CMV6YA+5VTA+5YJRM"),        // 食楽膳(嚥下対応)
   taihei:     A8("4B8BWU+CV79F6+4OFW+5Z6WY"),          // 宅配弁当のタイヘイ
   freezer_rental: A8("4B8BWU+CWE4MQ+OE2+TSBE9"),       // 冷凍庫レンタル
+  watami:     A8("4B8BWU+CLOBQQ+3YYE+BWVTE"),          // ワタミの宅食ダイレクト(2026/08/03提携)
+  watami_otameshi: A8("4B8BWU+CLOBQQ+3YYE+BZGEQ"),     // ワタミ・送料無料のお試しセット訴求
 
   // ---- もしもアフィリエイト 提携済み(W報酬対象) ----
   wellness:   "https://af.moshimo.com/af/c/click?a_id=5716754&p_id=4793&pc_id=12663&pl_id=63258", // ウェルネスダイニング
@@ -29,7 +31,6 @@ const AFFILIATE_LINKS = {
 
   // ---- 審査中(承認され次第ここを差し替え) ----
   nosh:       "https://nosh.jp/",                        // A8審査中
-  watami:     "https://www.watami-takushoku-direct.jp/", // A8・もしも審査中
   kinniku:    "https://muscle-shokudo.jp/",              // 筋肉食堂(A8審査中)
 
   // ---- ASPに案件なし(素のリンク) ----
